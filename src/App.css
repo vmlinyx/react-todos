@@ -11,3 +11,7 @@
 .App .todo {
   display: flex;
 }
+
+.completed {
+  text-decoration-line: line-through;
+}
