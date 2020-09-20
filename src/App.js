@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-// importing your components
+
+import "antd/dist/antd.css";
+
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 
@@ -49,9 +51,6 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Linyx's TodoList</h1>
-      </header>
       <Form
         todos={todos}
         setTodos={setTodos}

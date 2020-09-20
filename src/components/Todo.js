@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Button } from "antd";
+import { RedoOutlined, CheckOutlined, DeleteOutlined } from "@ant-design/icons";
 const Todo = function ({ text, todo, todos, setTodos }) {
   const deleteTodoHandler = function () {
     setTodos(todos.filter((el) => el.id !== todo.id));
@@ -18,16 +19,24 @@ const Todo = function ({ text, todo, todos, setTodos }) {
     );
   };
   return (
-    <div className="todo">
-      <li className={`todo-items ${todo.completed ? "completed" : ""}`}>
-        {text}
-      </li>
-      <button onClick={completeHandler} className="complete-btn">
-        {todo.completed ? "redo" : "check"}
-      </button>
-      <button onClick={deleteTodoHandler} className="trash-btn">
-        trash
-      </button>
+    <div className={`todo ${todo.completed ? "completed" : ""}`}>
+      <span className="todo-items">{text}</span>
+      <div className="action-btns">
+        <Button
+          shape="circle"
+          type={todo.completed ? "dashed" : "primary"}
+          icon={todo.completed ? <RedoOutlined /> : <CheckOutlined />}
+          onClick={completeHandler}
+          className="complete-btn"
+        />
+        <Button
+          danger
+          shape="circle"
+          icon={<DeleteOutlined />}
+          onClick={deleteTodoHandler}
+          className="trash-btn"
+        />
+      </div>
     </div>
   );
 };

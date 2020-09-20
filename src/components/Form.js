@@ -1,5 +1,7 @@
 import React from "react";
+import "./../App.css";
 
+import { Select, Input, Button } from "antd";
 const Form = function ({
   inputText,
   setInputText,
@@ -22,25 +24,36 @@ const Form = function ({
   const statusHandler = function (e) {
     setStatus(e.target.value);
   };
+  const { Option } = Select;
+
   return (
-    <form>
-      <input
+    <div className="todo-form">
+      <Input
         value={inputText}
         onChange={inputTextHandler}
-        type="text"
         className="todo-input"
       />
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
+      <Button
+        type="primary"
+        onClick={submitTodoHandler}
+        className="submit-button"
+      >
         Submit
-      </button>
-      <div className="select">
-        <select onChange={statusHandler} name="todos" className="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
+      </Button>
+
+      <div className="todo-select">
+        <Select
+          defaultValue="all"
+          onChange={statusHandler}
+          style={{ width: 120 }}
+          className="filter-todo"
+        >
+          <Option value="all">All</Option>
+          <Option value="completed">Completed</Option>
+          <Option value="uncompleted">Uncompleted</Option>
+        </Select>
       </div>
-    </form>
+    </div>
   );
 };
 

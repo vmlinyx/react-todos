@@ -1,11 +1,11 @@
 import React from "react";
-
+import { List } from "antd";
 import Todo from "./Todo";
 
 const TodoList = function ({ todos, setTodos, filteredTodos }) {
   return (
     <div className="todo-container">
-      <ul className="todo-list">
+      <List className="todo-list" itemLayout="horizontal">
         {filteredTodos.map((todo) => (
           <Todo
             setTodos={setTodos}
@@ -15,7 +15,7 @@ const TodoList = function ({ todos, setTodos, filteredTodos }) {
             text={todo.text}
           />
         ))}
-      </ul>
+      </List>
     </div>
   );
 };
