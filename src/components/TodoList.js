@@ -18,6 +18,6 @@ const TodoList = function ({ todos, setTodos, filteredTodos }) {
       </ul>
     </div>
   );
-}
+};
 
 export default TodoList;

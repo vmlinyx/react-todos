@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-
+import React, { useState, useEffect } from "react";
+import "./App.css";
 // importing your components
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
@@ -16,10 +15,10 @@ function App() {
   const filterHandler = function () {
     switch (status) {
       case "completed":
-        setFilteredTodos(todos.filter(todo => todo.completed === true));
+        setFilteredTodos(todos.filter((todo) => todo.completed === true));
         break;
       case "uncompleted":
-        setFilteredTodos(todos.filter(todo => todo.completed === false));
+        setFilteredTodos(todos.filter((todo) => todo.completed === false));
         break;
       default:
         setFilteredTodos(todos);
@@ -36,7 +35,7 @@ function App() {
       setTodos(JSON.parse(localStorage.getItem("todos")));
     }
   };
-  
+
   //use effect
   useEffect(() => {
     filterHandler();
@@ -60,7 +59,11 @@ function App() {
         setInputText={setInputText}
         setStatus={setStatus}
       />
-      <TodoList todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+      <TodoList
+        todos={todos}
+        setTodos={setTodos}
+        filteredTodos={filteredTodos}
+      />
     </div>
   );
 }
