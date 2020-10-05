@@ -21,8 +21,8 @@ const Form = function ({
     ]);
     setInputText("");
   };
-  const statusHandler = function (e) {
-    setStatus(e.target.value);
+  const statusHandler = function (value) {
+    setStatus(value);
   };
   const { Option } = Select;
 
