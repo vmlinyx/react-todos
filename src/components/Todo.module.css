@@ -1,0 +1,25 @@
+.todo {
+  height: 60px;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  color: #4d4d4d;
+  margin-bottom: 2px;
+}
+
+.completed {
+  text-decoration-line: line-through;
+}
+
+.todo:hover {
+  opacity: 0.9;
+}
+
+.checkbox {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  cursor: pointer;
+}

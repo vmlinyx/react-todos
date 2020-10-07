@@ -1,0 +1,21 @@
+.AddTodo {
+  margin: 80px 0;
+  display: flex;
+}
+
+.input {
+  height: 66px;
+  width: calc(100vw - 66px - 120px);
+  padding-left: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px 0 0 5px;
+}
+
+.button {
+  height: 66px;
+  width: 66px;
+  background-color: #1da1f2;
+  color: #f5f5f5;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
