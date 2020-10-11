@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from "./../constants/ActionTypes";
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from "./../constants/ActionTypes";
 import { getLocalTodos, saveLocalTodos } from "./../utils/localStorage";
 
 // TODO 使用特殊的 id 取代递增
@@ -20,6 +20,12 @@ export default function todos(state = initialState, action) {
           text: action.text,
         },
       ];
+      saveLocalTodos(newState);
+      return newState;
+    }
+
+    case DELETE_TODO: {
+      const newState = state.filter(todo => todo.id !== action.id);
       saveLocalTodos(newState);
       return newState;
     }
